@@ -4,15 +4,15 @@ namespace Activity1
 {
     class Grading
     {
-        static float Compute(int Programming, int Multimedia, int Electives, int Ethics)
+        static float Compute(int Programming, int Multimedia, int Electives, int Ethics, int Capstone)
         {
-            int sum = (Programming + Multimedia + Electives + Ethics);
-            float Ave = (float)sum / 4;
+            int sum = (Programming + Multimedia + Electives + Ethics + Capstone);
+            float Ave = (float)sum / 5;
             return Ave;
         }
         static void Main(String[] args)
         {
-            int programming, multimedia, electives, ethics;
+            int programming, multimedia, electives, ethics, capstone;
 
             Console.Write("Enter grade in Programming: ");
             programming = Convert.ToInt32(Console.ReadLine());
@@ -26,7 +26,10 @@ namespace Activity1
             Console.Write("Enter grade in Ethics: ");
             ethics = Convert.ToInt32(Console.ReadLine());
 
-            float Ave = Compute(programming, multimedia, electives, ethics);
+            Console.Write("Enter grade in Capstone: ");
+            capstone = Convert.ToInt32(Console.ReadLine());
+
+            float Ave = Compute(programming, multimedia, electives, ethics, capstone);
 
             Console.WriteLine("  ");
             Console.WriteLine($"Final Grade: {Ave:F2}");
